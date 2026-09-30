@@ -24,16 +24,20 @@ export default function NotificationDropdown() {
         boxShadow: "0 16px 40px rgba(15, 23, 42, 0.2)",
       }}
     >
-      <header style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        gap: 12,
-        padding: "14px 16px",
-        borderBottom: "1px solid #e8ebf0",
-      }}>
+      <header
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: 12,
+          padding: "14px 16px",
+          borderBottom: "1px solid #e8ebf0",
+        }}
+      >
         <div>
-          <h2 style={{ margin: 0, fontSize: 15, fontWeight: 700 }}>Notifications</h2>
+          <h2 style={{ margin: 0, fontSize: 15, fontWeight: 700 }}>
+            Notifications
+          </h2>
           <p style={{ margin: "3px 0 0", color: "#687386", fontSize: 12 }}>
             {unreadCount} unread
           </p>
@@ -57,13 +61,32 @@ export default function NotificationDropdown() {
         </button>
       </header>
       {notifications.length === 0 ? (
-        <p style={{ margin: 0, padding: "28px 16px", color: "#687386", textAlign: "center", fontSize: 13 }}>
+        <p
+          style={{
+            margin: 0,
+            padding: "28px 16px",
+            color: "#687386",
+            textAlign: "center",
+            fontSize: 13,
+          }}
+        >
           You are all caught up.
         </p>
       ) : (
-        <ul style={{ maxHeight: 380, overflowY: "auto", margin: 0, padding: 0, listStyle: "none" }}>
-          {notifications.map(notification => (
-            <NotificationItem key={notification.id} notification={notification} />
+        <ul
+          style={{
+            maxHeight: 380,
+            overflowY: "auto",
+            margin: 0,
+            padding: 0,
+            listStyle: "none",
+          }}
+        >
+          {notifications.map((notification) => (
+            <NotificationItem
+              key={notification.id}
+              notification={notification}
+            />
           ))}
         </ul>
       )}
